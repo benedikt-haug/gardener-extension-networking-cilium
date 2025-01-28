@@ -111,9 +111,6 @@ global:
     serviceMonitor:
       enabled: false
 
-  operatorHighAvailability:
-    enabled: true
-
   # operatorPrometheus enables
   operatorPrometheus:
     enabled: true

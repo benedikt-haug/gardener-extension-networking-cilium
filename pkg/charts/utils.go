@@ -61,9 +61,6 @@ var defaultGlobalConfig = globalConfig{
 			Enabled: false,
 		},
 	},
-	OperatorHighAvailability: operatorHighAvailability{
-		Enabled: true,
-	},
 	OperatorPrometheus: operatorPrometheus{
 		Enabled: true,
 		Port:    6942,
@@ -159,10 +156,6 @@ func generateChartValues(config *ciliumv1alpha1.NetworkConfig, network *extensio
 		//Iterate over all worker groups of the targeted shoot and calculate the maximum available nodes
 		for _, k := range cluster.Shoot.Spec.Provider.Workers {
 			countOfApplicableWorkerNodes += int(k.Maximum)
-		}
-
-		if countOfApplicableWorkerNodes < 2 {
-			globalConfig.OperatorHighAvailability.Enabled = false
 		}
 	}
 

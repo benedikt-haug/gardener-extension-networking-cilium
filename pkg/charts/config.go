@@ -24,7 +24,6 @@ type globalConfig struct {
 	Ipv6                     ipv6                                    `json:"ipv6"`
 	Debug                    debug                                   `json:"debug"`
 	Prometheus               prometheus                              `json:"prometheus"`
-	OperatorHighAvailability operatorHighAvailability                `json:"operatorHighAvailability"`
 	OperatorPrometheus       operatorPrometheus                      `json:"operatorPrometheus"`
 	Images                   map[string]string                       `json:"images"`
 	K8sServiceHost           string                                  `json:"k8sServiceHost"`
@@ -68,10 +67,6 @@ type prometheus struct {
 }
 
 type serviceMonitor struct {
-	Enabled bool `json:"enabled"`
-}
-
-type operatorHighAvailability struct {
 	Enabled bool `json:"enabled"`
 }
 
